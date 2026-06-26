@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CIPHER — Fighter System</title>
+<title>CIPHER V50 — Fighter System</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap');
 
@@ -1373,6 +1373,83 @@ body.v7-focus .app{max-width:900px}
 .v30-command{display:none;position:fixed;top:86px;left:50%;transform:translateX(-50%);z-index:850;width:min(620px,calc(100vw - 28px));background:rgba(5,5,8,.96);border:1px solid rgba(251,191,36,.38);border-radius:14px;padding:12px;box-shadow:0 0 40px rgba(251,191,36,.12)}.v30-command.open{display:block}.v30-command input{width:100%;background:#050508;border:1px solid var(--border);color:var(--white);border-radius:10px;padding:13px;font-family:'Share Tech Mono';font-size:12px}
 .v30-widget-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:10px 0}.v30-widget{text-align:center;background:rgba(5,5,8,.45);border:1px solid var(--border);border-radius:10px;padding:12px}.v30-widget b{display:block;font-family:'Orbitron';font-size:22px;color:var(--cyan-glow)}.v30-widget span{font-family:'Share Tech Mono';font-size:9px;color:var(--gray)}
 .v30-overlay-hidden .app{filter:blur(4px) brightness(.6)}@media(max-width:640px){.v30-sidebar{left:8px;right:8px;width:auto;bottom:92px}.v30-window{left:14px!important;top:82px!important}.v30-dock{bottom:4px}.v30-dock button{font-size:9px;padding:7px}}
+
+
+/* ===== CIPHER V50 XP COMMAND HUB — SAME INTERFACE ADD-ON ===== */
+/* Hide old V14 top bar without deleting old code */
+.v14-superbar{display:none!important}
+body.v14-padding{padding-top:0!important}
+.v50-xp-hero{
+  background:linear-gradient(135deg,rgba(37,99,235,.15),rgba(124,58,237,.11),rgba(6,182,212,.08));
+  border:1px solid rgba(34,211,238,.45);
+  border-left:4px solid var(--cyan);
+  border-radius:6px;
+  padding:18px;
+  margin-bottom:18px;
+  position:relative;
+  overflow:hidden;
+}
+.v50-xp-hero:after{
+  content:'YEAR 3000 XP CORE';
+  position:absolute;right:14px;top:12px;
+  font-family:'Share Tech Mono',monospace;font-size:9px;
+  color:rgba(34,211,238,.55);letter-spacing:2px;
+}
+.v50-xp-title{font-family:'Orbitron',sans-serif;font-size:20px;color:var(--cyan-glow);letter-spacing:3px;margin-bottom:7px}
+.v50-xp-sub{font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--gray);letter-spacing:1px;line-height:1.6}
+.v50-cat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:16px 0}
+.v50-cat-card{
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-left:4px solid var(--blue-bright);
+  border-radius:6px;
+  padding:15px;
+  position:relative;
+  overflow:hidden;
+}
+.v50-cat-card:nth-child(3n+2){border-left-color:var(--purple-bright)}
+.v50-cat-card:nth-child(3n+3){border-left-color:var(--gold)}
+.v50-cat-title{font-family:'Orbitron',sans-serif;font-size:12px;color:var(--white);letter-spacing:1px;margin-bottom:7px}
+.v50-xp-line{display:flex;align-items:center;justify-content:space-between;gap:8px;border-bottom:1px solid rgba(255,255,255,.045);padding:7px 0}
+.v50-xp-line:last-child{border-bottom:none}
+.v50-xp-line span{font-size:12px;color:var(--gray);line-height:1.35}
+.v50-xp-btn{
+  flex-shrink:0;background:rgba(6,182,212,.08);
+  border:1px solid rgba(34,211,238,.35);
+  color:var(--cyan-glow);
+  border-radius:4px;
+  font-family:'Share Tech Mono',monospace;
+  font-size:10px;
+  padding:6px 8px;
+  cursor:pointer;
+}
+.v50-xp-btn:hover{background:rgba(6,182,212,.14);border-color:var(--cyan)}
+.v50-kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:14px 0}
+.v50-kpi{background:rgba(5,5,8,.35);border:1px solid var(--border);border-radius:5px;padding:12px;text-align:center}
+.v50-kpi b{display:block;font-family:'Orbitron',sans-serif;font-size:24px;color:var(--gold-glow)}
+.v50-kpi span{font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--dim);letter-spacing:1px;text-transform:uppercase}
+.v50-bar-bg{height:8px;background:var(--shadow);border:1px solid var(--border);border-radius:999px;overflow:hidden;margin-top:12px}
+.v50-bar-fill{height:100%;width:0%;background:linear-gradient(90deg,var(--blue),var(--cyan),var(--gold),var(--purple));transition:.35s}
+.v50-mini-console{background:#050508;border:1px solid rgba(34,211,238,.25);border-radius:6px;padding:12px;color:var(--cyan-glow);font-family:'Share Tech Mono',monospace;font-size:11px;line-height:1.55;white-space:pre-wrap;min-height:80px}
+.v50-boss-card{
+  background:radial-gradient(circle at 20% 0,rgba(251,191,36,.14),transparent 26%),var(--panel);
+  border:1px solid rgba(251,191,36,.38);
+  border-left:4px solid var(--gold);
+  border-radius:6px;
+  padding:15px;
+  margin-top:14px;
+}
+.v50-beast-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.v50-beast{
+  background:rgba(5,5,8,.4);
+  border:1px solid var(--border);
+  border-radius:999px;
+  padding:6px 10px;
+  font-family:'Share Tech Mono',monospace;
+  font-size:10px;
+  color:var(--gray);
+}
+.v50-beast.active{border-color:var(--gold);color:var(--gold-glow);box-shadow:0 0 12px rgba(251,191,36,.16)}
 
 </style>
 </head>
@@ -3811,6 +3888,37 @@ body.v7-focus .app{max-width:900px}
   </div>
 
 <!-- MODAL -->
+
+<!-- ===== CIPHER V50 XP COMMAND HUB — same interface, new task tab ===== -->
+<div class="panel" id="v50xphub">
+  <div class="v50-xp-hero">
+    <div class="v50-xp-title">CIPHER V50 — XP COMMAND HUB</div>
+    <div class="v50-xp-sub">
+      One place to claim XP for every category. Keep all old tabs, but use this tab when you finish study, gym, German, cybersecurity, grooming, or Ragnarok missions.
+    </div>
+    <div class="v50-kpi-grid">
+      <div class="v50-kpi"><b id="v50TotalXP">0</b><span>Total XP</span></div>
+      <div class="v50-kpi"><b id="v50Rank">E</b><span>Current Rank</span></div>
+      <div class="v50-kpi"><b id="v50Claims">0</b><span>Claims</span></div>
+      <div class="v50-kpi"><b id="v50Today">0</b><span>Today XP</span></div>
+    </div>
+    <div class="v50-bar-bg"><div class="v50-bar-fill" id="v50Bar"></div></div>
+  </div>
+
+  <div class="v50-cat-grid" id="v50CatGrid"></div>
+
+  <div class="v50-boss-card">
+    <div class="v50-cat-title">⚔ Ragnarok Boss Missions</div>
+    <div class="v50-xp-line"><span>Finish 3 categories today</span><button class="v50-xp-btn" onclick="v50Claim('Ragnarok Boss',50)">+50 XP</button></div>
+    <div class="v50-xp-line"><span>Cyber + Body + Language combo</span><button class="v50-xp-btn" onclick="v50Claim('Three Core Combo',75)">+75 XP</button></div>
+    <div class="v50-xp-line"><span>Full day discipline clear</span><button class="v50-xp-btn" onclick="v50Claim('Full Day Clear',100)">+100 XP</button></div>
+    <div class="v50-beast-row" id="v50Beasts"></div>
+  </div>
+
+  <div class="section-title">XP ACTIVITY LOG</div>
+  <div class="v50-mini-console" id="v50Log">No XP claimed yet.</div>
+</div>
+
 <div class="modal-overlay" id="modal" onclick="if(event.target===this)closeModal()">
   <div class="modal">
     <div class="modal-header">
@@ -7390,6 +7498,89 @@ function v30RunCommand(){let q=(document.getElementById('v30CommandInput').value
 document.querySelectorAll('.v30-window').forEach(w=>{let h=w.querySelector('.v30-head'),drag=false,ox=0,oy=0;if(!h)return;h.addEventListener('mousedown',e=>{drag=true;ox=e.clientX-w.offsetLeft;oy=e.clientY-w.offsetTop;w.style.zIndex=850});document.addEventListener('mouseup',()=>drag=false);document.addEventListener('mousemove',e=>{if(drag){w.style.left=(e.clientX-ox)+'px';w.style.top=(e.clientY-oy)+'px'}});h.addEventListener('touchstart',e=>{let t=e.touches[0];drag=true;ox=t.clientX-w.offsetLeft;oy=t.clientY-w.offsetTop;w.style.zIndex=850});document.addEventListener('touchend',()=>drag=false);document.addEventListener('touchmove',e=>{if(drag){let t=e.touches[0];w.style.left=(t.clientX-ox)+'px';w.style.top=(t.clientY-oy)+'px'}})})
 document.addEventListener('keydown',e=>{if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();v30ToggleCommand()}})
 setTimeout(()=>{v30Refresh();v30Notify('CIPHER V30 READY')},500);
+</script>
+
+
+<script>
+/* ===== CIPHER V50 XP COMMAND HUB ENGINE ===== */
+(function(){
+  const cats = {
+    "Cybersecurity":["Networking study","Linux practice","Ethical hacking lesson","CTF/lab practice","Cyber notes written"],
+    "Digital Forensics":["Evidence notes","Forensics concept study","Case study review","Tool theory practice"],
+    "Fitness":["Workout completed","Strength log updated","Cardio/conditioning","Stretching/recovery"],
+    "Combat":["Shadowboxing","Footwork drill","Combo practice","Round timer session"],
+    "Languages":["German vocabulary","German speaking","English speaking","Listening practice"],
+    "Knowledge":["Reading session","Flashcard review","Course video","Mind map/notes"],
+    "Grooming":["Skincare AM/PM","Hair/beard routine","Hygiene checklist"],
+    "Nutrition":["Protein target","Water target","Budget meal tracked"],
+    "Planning":["Daily plan created","Weekly review","Task completed"],
+    "Mind":["Journal entry","Discipline task","Meditation/focus"]
+  };
+  const ranks = ["E","D","C","B","A","S","SS","SSS","X","EX","RAGNAROK"];
+  const beasts = ["🐺 Wolf","🐉 Dragon","🦁 Lion","🦅 Eagle","🔥 Phoenix","🐍 Serpent","🐻 Bear","🦊 Fox"];
+
+  function key(){return new Date().toISOString().slice(0,10)}
+  window.v50Data = function(){
+    return JSON.parse(localStorage.getItem("cipherV50XP") || '{"xp":0,"claims":0,"today":{},"log":[]}');
+  }
+  function save(d){localStorage.setItem("cipherV50XP", JSON.stringify(d));}
+
+  window.v50Claim = function(name,xp){
+    const d = v50Data();
+    d.xp += xp;
+    d.claims += 1;
+    d.today[key()] = (d.today[key()] || 0) + xp;
+    d.log.unshift("+"+xp+" XP  //  "+name+"  //  "+new Date().toLocaleTimeString());
+    d.log = d.log.slice(0,30);
+    save(d);
+    v50Render();
+    if(typeof showToast === "function") showToast("V50 XP CLAIMED +" + xp);
+  }
+
+  window.v50Render = function(){
+    const d = v50Data();
+    const rank = ranks[Math.min(ranks.length-1, Math.floor(d.xp/250))];
+    const total = document.getElementById("v50TotalXP");
+    if(!total) return;
+    total.textContent = d.xp;
+    document.getElementById("v50Rank").textContent = rank;
+    document.getElementById("v50Claims").textContent = d.claims;
+    document.getElementById("v50Today").textContent = d.today[key()] || 0;
+    document.getElementById("v50Bar").style.width = (d.xp % 250) / 250 * 100 + "%";
+    document.getElementById("v50Log").textContent = d.log.length ? d.log.join("\n") : "No XP claimed yet.";
+    document.getElementById("v50Beasts").innerHTML = beasts.map((b,i)=>`<span class="v50-beast ${d.xp >= i*300 ? 'active':''}">${b}</span>`).join("");
+  }
+
+  function build(){
+    const tabs = document.querySelector(".tabs");
+    if(tabs && !document.querySelector('[onclick="switchTab(\'v50xphub\')"]')){
+      const btn = document.createElement("button");
+      btn.className = "tab";
+      btn.setAttribute("data-cat","Core");
+      btn.setAttribute("onclick","switchTab('v50xphub')");
+      btn.innerHTML = "◈ XP COMMAND";
+      tabs.appendChild(btn);
+    }
+    const grid = document.getElementById("v50CatGrid");
+    if(grid && !grid.dataset.ready){
+      grid.dataset.ready = "1";
+      grid.innerHTML = Object.entries(cats).map(([cat,tasks]) => `
+        <div class="v50-cat-card">
+          <div class="v50-cat-title">${cat}</div>
+          ${tasks.map(t => `<div class="v50-xp-line"><span>${t}</span><button class="v50-xp-btn" onclick="v50Claim('${cat}: ${t}',10)">+10 XP</button></div>`).join("")}
+          <div class="v50-xp-line"><span>${cat} deep work / boss clear</span><button class="v50-xp-btn" onclick="v50Claim('${cat} Boss Clear',25)">+25 XP</button></div>
+        </div>
+      `).join("");
+    }
+    document.body.classList.remove("v14-padding");
+    const v14bar = document.querySelector(".v14-superbar");
+    if(v14bar) v14bar.style.display = "none";
+    v50Render();
+  }
+
+  document.addEventListener("DOMContentLoaded", build);
+  setTimeout(build, 700);
+})();
 </script>
 
 </body>
