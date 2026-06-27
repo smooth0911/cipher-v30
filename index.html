@@ -1877,6 +1877,120 @@ body.v100-ui-hologram{--cyan:#67e8f9;--cyan-glow:#cffafe;--blue:#0891b2;--blue-b
 .v100-trade-links{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}.v100-trade-links a{text-decoration:none;color:var(--cyan-glow);border:1px solid rgba(34,211,238,.30);border-radius:3px;padding:5px 7px;font-family:'Share Tech Mono';font-size:10px;background:rgba(6,182,212,.04)}
 @media(max-width:760px){.v100-trading-grid{grid-template-columns:1fr}.v100-ui-solo .app{padding-left:16px}.v100-ui-solo .tabs{position:relative;left:auto;top:auto;bottom:auto;width:auto;flex-direction:row}.v100-ui-solo .tab{writing-mode:horizontal-tb;min-height:auto}}
 
+
+/* ===== CIPHER V100 STYLE / OUTFIT / LOOK MATCH SYSTEM ===== */
+.v100-style-hero{
+  background:linear-gradient(135deg,rgba(6,182,212,.10),rgba(124,58,237,.10),rgba(251,191,36,.06));
+  border:1px solid rgba(34,211,238,.35);
+  border-left:5px solid var(--cyan);
+  border-radius:8px;
+  padding:18px;
+  margin-bottom:18px;
+  position:relative;
+  overflow:hidden;
+}
+.v100-style-hero:after{
+  content:'STYLE CORE';
+  position:absolute;right:14px;top:12px;
+  font-family:'Share Tech Mono';font-size:9px;
+  color:rgba(34,211,238,.55);letter-spacing:2px;
+}
+.v100-style-title{
+  font-family:'Orbitron';font-size:20px;
+  color:var(--cyan-glow);letter-spacing:3px;margin-bottom:8px;
+}
+.v100-style-sub{font-family:'Share Tech Mono';font-size:11px;color:var(--gray);letter-spacing:1px;line-height:1.6}
+.v100-style-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:13px;margin:14px 0}
+.v100-style-card{
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-left:4px solid var(--blue-bright);
+  border-radius:7px;
+  padding:14px;
+}
+.v100-style-card:nth-child(3n+2){border-left-color:var(--purple-bright)}
+.v100-style-card:nth-child(3n+3){border-left-color:var(--gold)}
+.v100-style-card h4{
+  font-family:'Orbitron';font-size:12px;
+  color:var(--white);letter-spacing:1px;margin-bottom:8px;
+}
+.v100-style-card p,.v100-style-card li{font-size:12px;color:var(--gray);line-height:1.5}
+.v100-style-card ul{margin-left:16px}
+.v100-style-control{
+  display:flex;gap:8px;flex-wrap:wrap;align-items:center;
+  border:1px solid var(--border);
+  background:rgba(5,5,8,.35);
+  padding:12px;border-radius:7px;margin:12px 0;
+}
+.v100-style-control select,.v100-style-control input,.v100-style-control textarea{
+  background:var(--shadow);border:1px solid var(--border);
+  color:var(--white);font-family:'Share Tech Mono';font-size:11px;
+  padding:9px;border-radius:4px;
+}
+.v100-style-control textarea{width:100%;min-height:80px;font-family:'Rajdhani';font-size:14px}
+.v100-chip-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.v100-chip{
+  font-family:'Share Tech Mono';font-size:10px;color:var(--cyan-glow);
+  border:1px solid rgba(34,211,238,.28);
+  background:rgba(6,182,212,.045);
+  padding:5px 8px;border-radius:999px;
+}
+.v100-outfit-filters{
+  display:flex;gap:7px;flex-wrap:wrap;margin:12px 0 16px;
+}
+.v100-filter-btn{
+  background:var(--panel);border:1px solid var(--border);
+  color:var(--gray);font-family:'Share Tech Mono';font-size:10px;
+  letter-spacing:1px;padding:8px 10px;border-radius:999px;cursor:pointer;
+}
+.v100-filter-btn.active,.v100-filter-btn:hover{border-color:var(--cyan);color:var(--cyan-glow);background:rgba(6,182,212,.08)}
+.v100-outfit-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:12px;margin-top:12px}
+.v100-outfit-card{
+  background:var(--panel);border:1px solid var(--border);
+  border-radius:7px;padding:13px;position:relative;overflow:hidden;
+  border-left:4px solid var(--cyan);
+}
+.v100-outfit-card:nth-child(4n+2){border-left-color:var(--purple-bright)}
+.v100-outfit-card:nth-child(4n+3){border-left-color:var(--gold)}
+.v100-outfit-card:nth-child(4n+4){border-left-color:var(--blue-bright)}
+.v100-outfit-card h4{font-family:'Orbitron';font-size:12px;color:var(--white);letter-spacing:1px;margin-bottom:7px}
+.v100-outfit-meta{font-family:'Share Tech Mono';font-size:9px;color:var(--dim);letter-spacing:1px;margin-bottom:7px;text-transform:uppercase}
+.v100-outfit-card p{font-size:12px;color:var(--gray);line-height:1.45;margin-bottom:6px}
+.v100-outfit-links{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.v100-outfit-links a{
+  text-decoration:none;color:var(--cyan-glow);
+  border:1px solid rgba(34,211,238,.30);
+  border-radius:3px;padding:5px 7px;
+  font-family:'Share Tech Mono';font-size:10px;background:rgba(6,182,212,.04);
+}
+.v100-look-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin:14px 0}
+.v100-look-card{
+  background:var(--panel);border:1px solid var(--border);
+  border-radius:7px;padding:13px;border-top:3px solid var(--cyan);
+}
+.v100-look-card h4{font-family:'Orbitron';font-size:12px;color:var(--white);letter-spacing:1px;margin-bottom:8px}
+.v100-look-card p,.v100-look-card li{font-size:12px;color:var(--gray);line-height:1.5}
+.v100-look-card ul{margin-left:16px}
+.v100-safe-note{
+  background:rgba(251,191,36,.08);
+  border:1px solid rgba(251,191,36,.35);
+  border-left:4px solid var(--gold);
+  border-radius:6px;padding:12px;margin:12px 0;
+  font-size:12px;color:var(--gray);line-height:1.55;
+}
+.v100-wardrobe-check{
+  display:flex;gap:8px;align-items:flex-start;
+  padding:7px 0;border-bottom:1px solid rgba(255,255,255,.05);
+}
+.v100-wardrobe-check input{accent-color:var(--cyan);margin-top:2px}
+.v100-wardrobe-check span{font-size:12px;color:var(--gray);line-height:1.35}
+.v100-style-preview{
+  background:radial-gradient(circle at 10% 0,rgba(34,211,238,.12),transparent 32%),var(--panel);
+  border:1px solid rgba(34,211,238,.28);
+  border-radius:8px;padding:14px;
+  min-height:110px;color:var(--gray);font-size:13px;line-height:1.5;
+}
+
 </style>
 </head>
 <body>
@@ -4311,6 +4425,112 @@ body.v100-ui-hologram{--cyan:#67e8f9;--cyan-glow:#cffafe;--blue:#0891b2;--blue-b
   </div>
   <div class="v100-roadmap-grid" id="v100MasterRoadmap"></div>
 </div>
+
+
+<!-- ===== CIPHER V100 STYLE PROFILE ===== -->
+<div id="tab-styleprofile" class="panel">
+  <div class="v100-style-hero">
+    <div class="v100-style-title">CIPHER V100 — STYLE PROFILE</div>
+    <div class="v100-style-sub">Dress matching, color system, fit guide and shopping direction. This is for confidence and clean style — not for judging your body or face.</div>
+  </div>
+
+  <div class="v100-style-control">
+    <select id="v100SkinTone">
+      <option>Warm / brown-friendly palette</option>
+      <option>Neutral palette</option>
+      <option>Cool palette</option>
+      <option>Deep contrast palette</option>
+    </select>
+    <select id="v100FitGoal">
+      <option>Clean young style</option>
+      <option>Streetwear</option>
+      <option>Smart casual</option>
+      <option>Formal / college presentation</option>
+      <option>Gym athletic</option>
+    </select>
+    <button class="theme-btn" onclick="v100GenerateStyleProfile()">GENERATE STYLE MATCH</button>
+    <textarea id="v100PhotoNotes" placeholder="Write your photo/video notes here: hair length, usual outfit, colors you like, budget, college dress rules..."></textarea>
+  </div>
+
+  <div class="v100-style-preview" id="v100StylePreview">
+    Select your palette and style goal, then generate a matching profile.
+  </div>
+
+  <div class="v100-style-grid">
+    <div class="v100-style-card">
+      <h4>BEST BASE COLORS</h4>
+      <p>Black, white, cream, charcoal, navy, olive, beige, brown, denim blue and muted green usually give a clean look.</p>
+      <div class="v100-chip-row"><span class="v100-chip">Black</span><span class="v100-chip">Cream</span><span class="v100-chip">Navy</span><span class="v100-chip">Olive</span><span class="v100-chip">Beige</span><span class="v100-chip">Denim</span></div>
+    </div>
+    <div class="v100-style-card">
+      <h4>FIT RULES</h4>
+      <ul><li>Shoulder seam should sit near shoulder edge.</li><li>Pants should not bunch too much at shoes.</li><li>Use one oversized item + one clean fitted item.</li><li>Try clothes before buying when possible.</li></ul>
+    </div>
+    <div class="v100-style-card">
+      <h4>SHOPPING PRIORITY</h4>
+      <ul><li>Start with 3 plain tees, 2 shirts, 2 jeans, 1 trouser, 1 overshirt.</li><li>Then add sneakers, watch, belt and perfume.</li><li>Buy versatile clothes before trend clothes.</li></ul>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CIPHER V100 100+ OUTFITS ===== -->
+<div id="tab-outfits100" class="panel">
+  <div class="v100-style-hero">
+    <div class="v100-style-title">CIPHER V100 — 100+ OUTFIT BUILDER</div>
+    <div class="v100-style-sub">Filter by category and pick outfits for college, streetwear, formal, gym, travel, festive, date/hangout and budget capsule.</div>
+  </div>
+  <div class="v100-outfit-filters" id="v100OutfitFilters"></div>
+  <div class="v100-outfit-grid" id="v100OutfitGrid"></div>
+</div>
+
+<!-- ===== CIPHER V100 LOOK MATCH ===== -->
+<div id="tab-lookmatch" class="panel">
+  <div class="v100-style-hero">
+    <div class="v100-style-title">CIPHER V100 — LOOK MATCH SYSTEM</div>
+    <div class="v100-style-sub">Hair, grooming, face-framing style, posture, photos and weekly glow-up routine.</div>
+  </div>
+  <div class="v100-safe-note">You do not need to “change your face.” This tab focuses on styling around your natural look: hair shape, neat grooming, clean skin routine, posture, outfit fit and photo angles.</div>
+  <div class="v100-look-list">
+    <div class="v100-look-card"><h4>HAIR STYLE OPTIONS</h4><ul><li>Textured fringe + low taper</li><li>Messy middle part with layers</li><li>Side-part classic clean look</li><li>Long front + medium back flow</li><li>Soft wolf cut / layered style</li></ul></div>
+    <div class="v100-look-card"><h4>FACE-FRAMING TIPS</h4><ul><li>Keep hair volume balanced, not too flat.</li><li>Clean neckline and sideburns make the face look sharper.</li><li>Simple chain/watch can improve outfit without overdoing it.</li><li>Use natural light photos from slightly above eye level.</li></ul></div>
+    <div class="v100-look-card"><h4>GROOMING ROUTINE</h4><ul><li>Morning: cleanser + moisturizer + sunscreen.</li><li>Night: gentle cleanser + moisturizer.</li><li>Hair: shampoo 2-3 times/week, style with small amount of product.</li><li>Weekly: trim nails, clean shoes, iron clothes.</li></ul></div>
+    <div class="v100-look-card"><h4>PHYSIQUE STYLE</h4><ul><li>Use fitted shoulders, relaxed body fit.</li><li>Open overshirts/jackets create a stronger frame.</li><li>Vertical lines and clean trousers make outfits look taller and sharper.</li><li>Gym clothes: fitted tee + jogger/shorts + clean sneakers.</li></ul></div>
+  </div>
+</div>
+
+<!-- ===== CIPHER V100 WARDROBE CAPSULE ===== -->
+<div id="tab-wardrobe" class="panel">
+  <div class="v100-style-hero">
+    <div class="v100-style-title">CIPHER V100 — WARDROBE CAPSULE</div>
+    <div class="v100-style-sub">Build a clean wardrobe step by step instead of buying random clothes.</div>
+  </div>
+  <div class="v100-style-grid">
+    <div class="v100-style-card"><h4>TOPS</h4>
+      <label class="v100-wardrobe-check"><input type="checkbox"><span>2 plain black/white tees</span></label>
+      <label class="v100-wardrobe-check"><input type="checkbox"><span>1 cream/olive tee</span></label>
+      <label class="v100-wardrobe-check"><input type="checkbox"><span>1 Oxford shirt</span></label>
+      <label class="v100-wardrobe-check"><input type="checkbox"><span>1 overshirt/flannel</span></label>
+      <label class="v100-wardrobe-check"><input type="checkbox"><span>1 hoodie/sweatshirt</span></label>
+    </div>
+    <div class="v100-style-card"><h4>BOTTOMS</h4>
+      <label class="v100-wardrobe-check"><input type="checkbox"><span>Dark blue jeans</span></label>
+      <label class="v100-wardrobe-check"><input type="checkbox"><span>Black jeans/trousers</span></label>
+      <label class="v100-wardrobe-check"><input type="checkbox"><span>Beige/khaki chinos</span></label>
+      <label class="v100-wardrobe-check"><input type="checkbox"><span>Joggers for gym/travel</span></label>
+    </div>
+    <div class="v100-style-card"><h4>SHOES + ACCESSORIES</h4>
+      <label class="v100-wardrobe-check"><input type="checkbox"><span>White/black sneakers</span></label>
+      <label class="v100-wardrobe-check"><input type="checkbox"><span>Formal shoes/loafers</span></label>
+      <label class="v100-wardrobe-check"><input type="checkbox"><span>Watch</span></label>
+      <label class="v100-wardrobe-check"><input type="checkbox"><span>Belt</span></label>
+      <label class="v100-wardrobe-check"><input type="checkbox"><span>Simple chain/ring if you like</span></label>
+    </div>
+    <div class="v100-style-card"><h4>2-YEAR STYLE ROADMAP</h4>
+      <ul><li>Month 1-3: build basics and good fit.</li><li>Month 4-6: add shoes/accessories.</li><li>Month 7-12: add formal and ethnic outfits.</li><li>Year 2: develop signature style and capsule wardrobe.</li></ul>
+    </div>
+  </div>
+</div>
+
 
 <div class="modal-overlay" id="modal" onclick="if(event.target===this)closeModal()">
   <div class="modal">
@@ -8014,7 +8234,7 @@ setTimeout(()=>{v30Refresh();v30Notify('CIPHER V100 READY')},500);
   function enrichTabs(){document.querySelectorAll(".tabs .tab").forEach(btn=>{const onclick=btn.getAttribute("onclick")||"";const match=onclick.match(/switchTab\('([^']+)'\)/);const id=match?match[1]:"";const panel=document.getElementById("tab-"+id);if(panel&&!panel.querySelector('[data-v100kit="1"]')&&id!=="v100system")panel.insertAdjacentHTML("beforeend",kitHTML(id));});const master=document.getElementById("v100MasterRoadmap");if(master&&!master.dataset.ready){master.dataset.ready="1";const blocks=[["Months 1-3","Cyber basics, German/English basics, gym consistency, grooming routine."],["Months 4-6","Linux + networking, strength progression, speaking practice, study notes."],["Months 7-9","Web security basics, projects, boxing/conditioning, better communication."],["Months 10-12","Portfolio, exam prep, ethical hacking labs, body transformation review."],["Year 2 First Half","Digital forensics tracks, certifications, bigger projects, interview prep."],["Year 2 Second Half","Specialization, GitHub portfolio, advanced routines, long-term mastery."]];master.innerHTML=blocks.map(b=>`<div class="v100-plan-card"><h4>${b[0]}</h4><p>${b[1]}</p><div class="v100-resource-row">${linksFor("Knowledge")}</div></div>`).join("");}}
   window.v100Render=function(){const pg=document.getElementById("v100PowerGrid");const mg=document.getElementById("v100ModeGrid");if(pg){pg.innerHTML=powers.map(p=>{const xp=Number(localStorage.getItem("cipherV100Power_"+p[1])||0);return `<div class="v100-power"><div class="icon">${p[0]}</div><b>${p[1]}</b><span>${p[2]}</span><span>XP: <strong>${xp}</strong></span><button class="v100-mini-btn" onclick="v100ClaimPower('${p[1]}')">AWAKEN +10</button></div>`;}).join("");}if(mg){const current=localStorage.getItem("cipherV100Theme")||"v100-theme-void";mg.innerHTML=interfaces.map(m=>`<div class="v100-mode ${current===m[0]?'active':''}" data-mode="${m[0]}" onclick="v100ApplyMode('${m[0]}','${m[1]}')"><b>${m[1]}</b><span>${m[2]}</span><div class="v100-color-strip"></div></div>`).join("");}};
   function normalizeVersionLabels(){document.querySelectorAll(".system-badge,.arise-sub,.v7-deck-title,.v10-panel,.v11-taskbar,.v14-superbar,.v15-login-title,.v30-sidebar").forEach(el=>{el.innerHTML=el.innerHTML.replace(/V(?:5|6|7|10|11|14|15|25|30|50)/g,"V100").replace(/VERSION\s*(?:5|6|7|10|11|14|15|25|30|50)/gi,"VERSION 100");});}
-  function init(){normalizeVersionLabels();const saved=localStorage.getItem("cipherV100Theme")||"v100-theme-void";cleanInterfaceClasses();if(saved!=="v100-theme-void")document.body.classList.add(saved);const sel=document.getElementById("v100InterfaceSelect");if(sel)sel.value=saved;v100Render();enrichTabs();const allowed=new Set(["workouts","dashboard","tracker","routine","daily","nutrition","skills","study","skincare","resources","hygiene","growth","english","german","cyberroutine","cyber2y","workout2y","dfir2y","ethical2y","trading","darkpsy","mentalism","grooming2y","vault","aihub","projects","certs","v50xphub","v100system","roadmap2y","roadmap2y"]);const seen=new Set();document.querySelectorAll(".tabs .tab").forEach(btn=>{const onclick=btn.getAttribute("onclick")||"";const match=onclick.match(/switchTab\('([^']+)'\)/);const id=match?match[1]:"";if(!allowed.has(id)||seen.has(id))btn.remove();else seen.add(id);});const tabs=[...document.querySelectorAll(".tabs .tab")];if(tabs.length>30){const road=tabs.find(b=>(b.getAttribute("onclick")||"").includes("roadmap2y"));if(road)road.remove();}}
+  function init(){normalizeVersionLabels();const saved=localStorage.getItem("cipherV100Theme")||"v100-theme-void";cleanInterfaceClasses();if(saved!=="v100-theme-void")document.body.classList.add(saved);const sel=document.getElementById("v100InterfaceSelect");if(sel)sel.value=saved;v100Render();enrichTabs();const allowed=new Set(["workouts","dashboard","tracker","routine","daily","nutrition","skills","study","skincare","resources","hygiene","growth","english","german","cyberroutine","cyber2y","workout2y","dfir2y","ethical2y","trading","darkpsy","mentalism","grooming2y","vault","aihub","projects","certs","v50xphub","v100system","styleprofile","outfits100","lookmatch","wardrobe","roadmap2y","styleprofile","outfits100","lookmatch","wardrobe","roadmap2y"]);const seen=new Set();document.querySelectorAll(".tabs .tab").forEach(btn=>{const onclick=btn.getAttribute("onclick")||"";const match=onclick.match(/switchTab\('([^']+)'\)/);const id=match?match[1]:"";if(!allowed.has(id)||seen.has(id))btn.remove();else seen.add(id);});const tabs=[...document.querySelectorAll(".tabs .tab")];if(tabs.length>30){const road=tabs.find(b=>(b.getAttribute("onclick")||"").includes("roadmap2y"));if(road)road.remove();}}
   document.addEventListener("DOMContentLoaded",init);setTimeout(init,500);setTimeout(init,1200);
 })();
 </script>
@@ -8162,7 +8382,7 @@ setTimeout(()=>{v30Refresh();v30Notify('CIPHER V100 READY')},500);
     });
 
     // 30 tabs max, remove duplicates/similar tabs at runtime.
-    const allowed=["workouts","dashboard","tracker","routine","daily","nutrition","skills","study","skincare","resources","hygiene","growth","english","german","cyberroutine","cyber2y","workout2y","dfir2y","ethical2y","trading","darkpsy","mentalism","grooming2y","vault","aihub","projects","certs","v50xphub","v100system","roadmap2y"];
+    const allowed=["workouts","dashboard","tracker","routine","daily","nutrition","skills","study","skincare","resources","hygiene","growth","english","german","cyberroutine","cyber2y","workout2y","dfir2y","ethical2y","trading","darkpsy","mentalism","grooming2y","vault","aihub","projects","certs","v50xphub","v100system","styleprofile","outfits100","lookmatch","wardrobe","roadmap2y","styleprofile","outfits100","lookmatch","wardrobe"];
     const seen=new Set();
     document.querySelectorAll(".tabs .tab").forEach(btn=>{
       const onclick=btn.getAttribute("onclick")||"";
@@ -8272,6 +8492,245 @@ setTimeout(()=>{v30Refresh();v30Notify('CIPHER V100 READY')},500);
   }
   document.addEventListener("DOMContentLoaded",initUltra);
   setTimeout(initUltra,500);setTimeout(initUltra,1300);
+})();
+</script>
+
+
+<script>
+/* ===== CIPHER V100 STYLE ENGINE ===== */
+(function(){
+  const outfitData = [];
+  const categories = {
+    "College Casual":[
+      ["Black tee + light blue jeans + white sneakers","simple clean daily outfit"],
+      ["Cream tee + olive overshirt + black jeans","warm balanced outfit"],
+      ["Navy polo + beige chinos + sneakers","smart college casual"],
+      ["White tee + denim jacket + black jeans","classic young style"],
+      ["Olive tee + dark jeans + black sneakers","simple strong palette"],
+      ["Grey tee + open check shirt + blue jeans","relaxed campus outfit"],
+      ["Black oversized tee + straight jeans + sneakers","street-casual mix"],
+      ["White shirt + sleeves rolled + jeans","clean presentation casual"],
+      ["Brown tee + cream overshirt + cargos","earth tone look"],
+      ["Charcoal tee + beige trousers + sneakers","minimal clean fit"],
+      ["Navy sweatshirt + black jeans","easy cool outfit"],
+      ["White tee + black overshirt + grey jeans","monochrome layer"]
+    ],
+    "Streetwear":[
+      ["Oversized black tee + cargos + sneakers","streetwear starter"],
+      ["Graphic tee + open flannel + loose jeans","creative casual"],
+      ["Hoodie + cargo pants + chunky sneakers","comfortable street style"],
+      ["Overshirt + plain tee + relaxed jeans","layered street style"],
+      ["Black tee + olive cargos + cap","simple street combo"],
+      ["Denim shirt + black tee + cargos","rugged street outfit"],
+      ["Boxy tee + straight pants + sneakers","modern silhouette"],
+      ["Varsity jacket + plain tee + jeans","youthful bold outfit"],
+      ["Monochrome black outfit + white sneakers","clean street look"],
+      ["Beige tee + brown cargos + sneakers","earth streetwear"],
+      ["Half-zip sweatshirt + relaxed trousers","premium casual"],
+      ["Sleeveless puffer + hoodie + jeans","winter street look"]
+    ],
+    "Smart Casual":[
+      ["Oxford shirt + chinos + loafers","clean smart casual"],
+      ["Polo + tailored trousers + sneakers","easy smart look"],
+      ["Black shirt + beige chinos + watch","sharp evening style"],
+      ["White shirt + navy trousers + loafers","classic smart outfit"],
+      ["Knitted polo + dark jeans + sneakers","soft premium style"],
+      ["Tucked tee + overshirt + chinos","modern smart casual"],
+      ["Navy shirt + grey trousers","balanced formal-casual"],
+      ["Cream shirt + black trousers","minimal premium look"],
+      ["Light blue shirt + beige chinos","fresh daytime look"],
+      ["Black polo + grey chinos","simple strong style"],
+      ["Brown overshirt + white tee + trousers","warm smart casual"],
+      ["Denim jacket + polo + chinos","semi-smart weekend outfit"]
+    ],
+    "Formal":[
+      ["White shirt + black trousers + formal shoes","basic formal set"],
+      ["Light blue shirt + navy trousers","college presentation look"],
+      ["Black shirt + charcoal trousers","evening formal"],
+      ["Cream shirt + brown trousers","warm formal style"],
+      ["White shirt + grey trousers + belt","safe formal combo"],
+      ["Navy blazer + white shirt + chinos","event smart formal"],
+      ["Black trousers + tucked polo","simple formal casual"],
+      ["Check shirt + plain trousers","soft formal college look"],
+      ["Oxford shirt + slim/straight trousers","interview basic"],
+      ["Nehru jacket + kurta + trousers","Indian formal fusion"],
+      ["White kurta + dark jeans/trousers","clean ethnic formal"],
+      ["Monochrome shirt/trouser + watch","minimal formal"]
+    ],
+    "Gym / Athletic":[
+      ["Fitted black tee + joggers + training shoes","gym starter"],
+      ["Dry-fit tee + shorts + sneakers","training comfort"],
+      ["Sleeveless tee + joggers","athletic look"],
+      ["Compression tee + track pants","clean gym fit"],
+      ["Hoodie + joggers","warm-up outfit"],
+      ["Oversized tee + shorts","comfortable pump cover"],
+      ["Black tee + grey joggers","classic gym color"],
+      ["Navy tee + black shorts","simple athletic"],
+      ["White tee + black joggers","clean contrast"],
+      ["Tank + lightweight jacket + joggers","layered gym style"],
+      ["Track suit set","travel/gym combo"],
+      ["Sports polo + shorts","clean active look"]
+    ],
+    "Ethnic / Festive":[
+      ["White kurta + black jeans + sandals","simple ethnic"],
+      ["Cream kurta + brown sandals","warm festive"],
+      ["Black kurta + white pants","high contrast ethnic"],
+      ["Navy kurta + beige trousers","smart ethnic"],
+      ["Printed short kurta + jeans","casual festive"],
+      ["Kurta + Nehru jacket","event outfit"],
+      ["Linen shirt + mundu/veshti if preferred","Kerala clean style"],
+      ["White shirt + mundu","traditional neat look"],
+      ["Pastel kurta + watch","soft festive"],
+      ["Olive kurta + brown sandals","earthy ethnic"],
+      ["Black shirt + mundu","modern Kerala style"],
+      ["Cream shirt + dark trousers","festival smart casual"]
+    ],
+    "Travel / Monsoon":[
+      ["Quick-dry tee + cargos + sneakers","travel practical"],
+      ["Overshirt + tee + relaxed pants","airport/bus look"],
+      ["Hoodie + joggers + backpack","comfortable travel"],
+      ["Dark tee + dark jeans","monsoon safe color"],
+      ["Water-resistant jacket + tee + cargos","rain-ready"],
+      ["Polo + joggers","travel clean outfit"],
+      ["Black shirt + straight pants","easy wrinkle-safe"],
+      ["Tee + light jacket + chinos","cool weather travel"],
+      ["Denim jacket + tee + sneakers","travel photos outfit"],
+      ["Olive overshirt + black tee","functional layer"],
+      ["Relaxed trousers + oversized tee","comfort outfit"],
+      ["Cap + tee + cargos","outdoor casual"]
+    ],
+    "Date / Hangout":[
+      ["Black shirt + blue jeans + watch","simple confident"],
+      ["Cream tee + olive overshirt + jeans","soft clean look"],
+      ["White shirt + black trousers","sharp neat style"],
+      ["Navy polo + beige chinos","friendly smart outfit"],
+      ["Brown shirt + black jeans","warm evening look"],
+      ["Denim jacket + white tee","casual photo-ready"],
+      ["Black tee + chain + straight jeans","minimal stylish"],
+      ["Pastel shirt + dark jeans","soft fresh look"],
+      ["Knitted tee + trousers","premium hangout"],
+      ["Overshirt + sneakers + watch","balanced style"],
+      ["White tee + black cargos","casual street look"],
+      ["Flannel + plain tee + jeans","relaxed friendly"]
+    ],
+    "Budget Capsule":[
+      ["Plain black tee + jeans","repeatable base"],
+      ["Plain white tee + jeans","fresh base"],
+      ["Cream tee + chinos","warm neutral"],
+      ["Oxford shirt + jeans","smart reuse"],
+      ["Polo + trousers","college/formal reuse"],
+      ["Overshirt + tee + jeans","layering base"],
+      ["Hoodie + joggers","comfort base"],
+      ["Black shirt + trousers","formal base"],
+      ["Denim jacket + tee","versatile layer"],
+      ["Olive shirt + black jeans","earth tone base"],
+      ["White sneakers with any basic outfit","shoe anchor"],
+      ["Watch + belt + clean shoes","accessory upgrade"]
+    ]
+  };
+
+  Object.entries(categories).forEach(([cat,items])=>{
+    items.forEach((o,i)=>outfitData.push({
+      cat,
+      title: cat+" #"+String(i+1).padStart(2,"0"),
+      combo:o[0],
+      note:o[1]
+    }));
+  });
+
+  function link(q,type){
+    const enc=encodeURIComponent(q);
+    if(type==="yt") return "https://www.youtube.com/results?search_query="+enc;
+    return "https://www.google.com/search?q="+enc;
+  }
+
+  window.v100RenderOutfits=function(cat="All"){
+    const grid=document.getElementById("v100OutfitGrid");
+    if(!grid) return;
+    const data=cat==="All"?outfitData:outfitData.filter(x=>x.cat===cat);
+    grid.innerHTML=data.map(o=>`
+      <div class="v100-outfit-card">
+        <div class="v100-outfit-meta">${o.cat}</div>
+        <h4>${o.title}</h4>
+        <p><strong>Combo:</strong> ${o.combo}</p>
+        <p>${o.note}</p>
+        <div class="v100-outfit-links">
+          <a target="_blank" href="${link(o.combo+" men's outfit", "yt")}">YouTube</a>
+          <a target="_blank" href="${link(o.combo+" men's outfit ideas", "g")}">Ideas</a>
+          <a target="_blank" href="${link(o.combo+" men India", "g")}">Shop Search</a>
+        </div>
+      </div>`).join("");
+    document.querySelectorAll(".v100-filter-btn").forEach(b=>b.classList.toggle("active",b.dataset.cat===cat));
+  }
+
+  function initFilters(){
+    const box=document.getElementById("v100OutfitFilters");
+    if(!box || box.dataset.ready) return;
+    box.dataset.ready="1";
+    const cats=["All",...Object.keys(categories)];
+    box.innerHTML=cats.map(c=>`<button class="v100-filter-btn ${c==="All"?"active":""}" data-cat="${c}" onclick="v100RenderOutfits('${c}')">${c}</button>`).join("");
+    v100RenderOutfits("All");
+  }
+
+  window.v100GenerateStyleProfile=function(){
+    const tone=(document.getElementById("v100SkinTone")||{}).value||"Warm / brown-friendly palette";
+    const goal=(document.getElementById("v100FitGoal")||{}).value||"Clean young style";
+    const notes=(document.getElementById("v100PhotoNotes")||{}).value||"";
+    const out=document.getElementById("v100StylePreview");
+    if(out){
+      out.innerHTML=`<strong>Style Match:</strong> ${goal}<br>
+      <strong>Palette:</strong> ${tone}<br>
+      <strong>Best direction:</strong> Start with black/cream/navy/olive basics, add one strong layer like an overshirt, denim jacket or clean shirt. Keep shoes clean and use a watch/belt for a sharper look.<br>
+      <strong>Your notes:</strong> ${notes ? notes.replace(/</g,"&lt;").replace(/>/g,"&gt;") : "No notes added yet."}`;
+    }
+    if(typeof showToast==="function") showToast("Style profile generated");
+  }
+
+  function installStyleTabs(){
+    const tabs=document.querySelector(".tabs");
+    if(!tabs) return;
+
+    const removeIds=["hygiene","darkpsy","mindreading","mentalism","grooming2y"];
+    removeIds.forEach(id=>{
+      document.querySelectorAll(`.tabs .tab[onclick*="'${id}'"]`).forEach(el=>el.remove());
+    });
+
+    const add=[
+      ["styleprofile","Style Profile","Style"],
+      ["outfits100","100+ Outfits","Style"],
+      ["lookmatch","Look Match","Style"],
+      ["wardrobe","Wardrobe","Style"]
+    ];
+    add.forEach(([id,label,cat])=>{
+      if(!document.querySelector(`.tabs .tab[onclick*="'${id}'"]`)){
+        const btn=document.createElement("button");
+        btn.className="tab";
+        btn.dataset.cat=cat;
+        btn.setAttribute("onclick",`switchTab('${id}')`);
+        btn.textContent="◈ "+label.toUpperCase();
+        tabs.appendChild(btn);
+      }
+    });
+
+    // Keep max 30 visible tab buttons.
+    const seen=new Set();
+    [...document.querySelectorAll(".tabs .tab")].forEach(btn=>{
+      const m=(btn.getAttribute("onclick")||"").match(/switchTab\('([^']+)'\)/);
+      const id=m?m[1]:"";
+      if(seen.has(id)) btn.remove();
+      else seen.add(id);
+    });
+    const current=[...document.querySelectorAll(".tabs .tab")];
+    if(current.length>30){
+      current.slice(30).forEach(x=>x.remove());
+    }
+    initFilters();
+  }
+
+  document.addEventListener("DOMContentLoaded",installStyleTabs);
+  setTimeout(installStyleTabs,500);
+  setTimeout(installStyleTabs,1500);
+  setTimeout(installStyleTabs,2800);
 })();
 </script>
 
