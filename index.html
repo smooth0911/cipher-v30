@@ -1991,6 +1991,101 @@ body.v100-ui-hologram{--cyan:#67e8f9;--cyan-glow:#cffafe;--blue:#0891b2;--blue-b
   min-height:110px;color:var(--gray);font-size:13px;line-height:1.5;
 }
 
+
+/* ===== CIPHER V100 MASTER TAB SELECTOR FIX ===== */
+.v100-tab-selector-shell{
+  position:sticky;
+  top:0;
+  z-index:80;
+  background:linear-gradient(135deg,rgba(5,5,8,.94),rgba(19,19,31,.90));
+  border:1px solid rgba(34,211,238,.30);
+  border-left:5px solid var(--cyan);
+  border-radius:8px;
+  padding:12px;
+  margin:12px 0 16px;
+  backdrop-filter:blur(12px);
+  box-shadow:0 0 24px rgba(6,182,212,.10);
+}
+.v100-tab-selector-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:10px;
+  flex-wrap:wrap;
+}
+.v100-tab-selector-title{
+  font-family:'Orbitron';
+  font-size:13px;
+  color:var(--cyan-glow);
+  letter-spacing:2px;
+}
+.v100-tab-selector-count{
+  font-family:'Share Tech Mono';
+  font-size:10px;
+  color:var(--dim);
+  letter-spacing:1px;
+}
+.v100-tab-selector-controls{
+  display:grid;
+  grid-template-columns:minmax(220px,1.3fr) minmax(170px,.8fr) auto auto;
+  gap:8px;
+  align-items:center;
+}
+.v100-tab-selector-controls select,
+.v100-tab-selector-controls input{
+  background:var(--shadow);
+  border:1px solid var(--border);
+  color:var(--white);
+  font-family:'Share Tech Mono';
+  font-size:11px;
+  padding:9px;
+  border-radius:4px;
+  min-width:0;
+}
+.v100-tab-selector-controls button{
+  background:linear-gradient(135deg,rgba(37,99,235,.18),rgba(124,58,237,.12));
+  border:1px solid rgba(96,165,250,.38);
+  color:var(--white);
+  font-family:'Share Tech Mono';
+  font-size:10px;
+  letter-spacing:1px;
+  padding:9px 10px;
+  border-radius:4px;
+  cursor:pointer;
+}
+.v100-tab-selector-controls button:hover{
+  border-color:var(--cyan);
+  color:var(--cyan-glow);
+}
+.v100-tab-chip-row{
+  display:flex;
+  gap:6px;
+  flex-wrap:wrap;
+  max-height:88px;
+  overflow:auto;
+  padding-top:9px;
+}
+.v100-tab-chip{
+  border:1px solid rgba(34,211,238,.22);
+  background:rgba(6,182,212,.045);
+  color:var(--gray);
+  border-radius:999px;
+  font-family:'Share Tech Mono';
+  font-size:10px;
+  padding:6px 8px;
+  cursor:pointer;
+}
+.v100-tab-chip:hover,.v100-tab-chip.active{
+  border-color:var(--cyan);
+  color:var(--cyan-glow);
+  background:rgba(6,182,212,.10);
+}
+.v100-tab-search-hidden{display:none!important}
+@media(max-width:720px){
+  .v100-tab-selector-controls{grid-template-columns:1fr}
+}
+
 </style>
 </head>
 <body>
@@ -4527,6 +4622,156 @@ body.v100-ui-hologram{--cyan:#67e8f9;--cyan-glow:#cffafe;--blue:#0891b2;--blue-b
     </div>
     <div class="v100-style-card"><h4>2-YEAR STYLE ROADMAP</h4>
       <ul><li>Month 1-3: build basics and good fit.</li><li>Month 4-6: add shoes/accessories.</li><li>Month 7-12: add formal and ethnic outfits.</li><li>Year 2: develop signature style and capsule wardrobe.</li></ul>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- ===== CIPHER V100 RED TEAM ROADMAP ===== -->
+<div id="tab-redteamroadmap" class="panel">
+  <div class="v100-style-hero">
+    <div class="v100-style-title">CIPHER V100 — RED TEAM BEGINNER ROADMAP</div>
+    <div class="v100-style-sub">Clean 2-year roadmap with your book drive, topic selector, daily XP check-ins and study resources.</div>
+  </div>
+
+  <div class="v100-safe-note">Use this only for college learning, CTFs, authorized labs, and systems where you have permission. This roadmap is for safe learning and skill building.</div>
+
+  <div class="v100-style-control red100-controls">
+    <select id="red100Topic" onchange="red100RenderTopic(this.value)">
+      <option value="networking">Networking Fundamentals</option>
+      <option value="os">Operating Systems</option>
+      <option value="programming">Programming</option>
+      <option value="basics">Cybersecurity Basics</option>
+      <option value="osint">OSINT</option>
+      <option value="footprinting">Footprinting</option>
+      <option value="scanning">Scanning Theory</option>
+      <option value="reporting">Reporting + Notes</option>
+    </select>
+    <button class="theme-btn" onclick="if(window.v50Claim)v50Claim('Red Team: Daily Study',25)">CLAIM DAILY +25</button>
+    <button class="theme-btn" onclick="if(window.v50Claim)v50Claim('Red Team: Weekly Boss',50)">WEEKLY BOSS +50</button>
+  </div>
+
+  <div class="v100-style-preview red100-preview" id="red100TopicBox">Select a topic to view the learning target and resources.</div>
+
+  <div class="v100-style-grid">
+    <div class="v100-style-card">
+      <h4>YOUR BOOK DRIVE</h4>
+      <p>Your shared Google Drive folder is added as the main study vault for this roadmap.</p>
+      <div class="red100-links">
+        <a class="red100-link" target="_blank" href="https://drive.google.com/drive/mobile/folders/1c4nFRess-oL0jNITaUuADEVfTHcTnysO?usp=sharing&fbclid=PAZXh0bgNhZW0BMAABpgZ4SGOta2uEaWSd2Vz10MzzBoaYyH9IRLKg4y_iYDvlaYFV7dzB8dEQvQ_aem_HdA6Uq-1snyl55ktyUD3QA&pli=1">Open Book Drive</a>
+        <a class="red100-link" target="_blank" href="https://www.youtube.com/results?search_query=red+team+beginner+roadmap">YouTube Roadmap</a>
+        <a class="red100-link" target="_blank" href="https://www.google.com/search?q=red+team+beginner+roadmap+pdf">Roadmap PDF</a>
+      </div>
+    </div>
+    <div class="v100-style-card">
+      <h4>DAILY STUDY LOOP</h4>
+      <label class="v100-wardrobe-check"><input type="checkbox" onchange="if(window.v50Claim)v50Claim('Red Team: Learn Concept',10)"><span>Learn one concept from books or videos.</span></label>
+      <label class="v100-wardrobe-check"><input type="checkbox" onchange="if(window.v50Claim)v50Claim('Red Team: Write Notes',10)"><span>Write simple notes in your own words.</span></label>
+      <label class="v100-wardrobe-check"><input type="checkbox" onchange="if(window.v50Claim)v50Claim('Red Team: Lab Practice',10)"><span>Practice only in TryHackMe, HTB, CTF or your own lab.</span></label>
+      <label class="v100-wardrobe-check"><input type="checkbox" onchange="if(window.v50Claim)v50Claim('Red Team: Review',10)"><span>Review what you learned before ending the day.</span></label>
+    </div>
+    <div class="v100-style-card">
+      <h4>SAFE BEGINNER LABS</h4>
+      <ul>
+        <li>TryHackMe beginner rooms</li>
+        <li>PortSwigger Web Security Academy</li>
+        <li>picoCTF and beginner CTFs</li>
+        <li>Packet Tracer / Wireshark practice</li>
+      </ul>
+      <div class="red100-links">
+        <a class="red100-link" target="_blank" href="https://tryhackme.com/">TryHackMe</a>
+        <a class="red100-link" target="_blank" href="https://portswigger.net/web-security">PortSwigger</a>
+        <a class="red100-link" target="_blank" href="https://picoctf.org/">picoCTF</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="red100-section-title">YEAR 1 — FOUNDATION</div>
+  <div class="v100-style-grid">
+    <div class="v100-style-card">
+      <h4>MONTH 1-3 — NETWORKING</h4>
+      <ul>
+        <li>TCP/IP model, layers, protocols and data flow</li>
+        <li>Subnet masks, network addresses, broadcast addresses</li>
+        <li>Routing basics: RIP, OSPF, BGP theory</li>
+        <li>Routers, switches and firewalls</li>
+      </ul>
+      <div class="red100-links"><a class="red100-link" target="_blank" href="https://www.youtube.com/results?search_query=networking+fundamentals+for+cybersecurity">YouTube</a><a class="red100-link" target="_blank" href="https://www.google.com/search?q=networking+fundamentals+cybersecurity+pdf">PDF</a></div>
+    </div>
+    <div class="v100-style-card">
+      <h4>MONTH 4-6 — OPERATING SYSTEMS</h4>
+      <ul>
+        <li>Linux command line, file systems, processes</li>
+        <li>Windows registry, services and user management</li>
+        <li>macOS architecture and command-line basics</li>
+        <li>System administration fundamentals</li>
+      </ul>
+      <div class="red100-links"><a class="red100-link" target="_blank" href="https://linuxjourney.com/">Linux Journey</a><a class="red100-link" target="_blank" href="https://learn.microsoft.com/en-us/windows/">Windows Learn</a></div>
+    </div>
+    <div class="v100-style-card">
+      <h4>MONTH 7-9 — PROGRAMMING</h4>
+      <ul>
+        <li>Python: data structures, control flow, libraries</li>
+        <li>Scapy basics</li>
+        <li>Bash shell scripting</li>
+        <li>C/C++ concepts for memory and exploitation theory</li>
+      </ul>
+      <div class="red100-links"><a class="red100-link" target="_blank" href="https://docs.python.org/3/tutorial/">Python</a><a class="red100-link" target="_blank" href="https://www.gnu.org/software/bash/manual/">Bash</a></div>
+    </div>
+    <div class="v100-style-card">
+      <h4>MONTH 10-12 — CYBER BASICS</h4>
+      <ul>
+        <li>Threat landscape: malware, phishing, DDoS</li>
+        <li>Vulnerability types: SQLi, XSS, buffer overflow</li>
+        <li>Security controls: firewalls, IDS, antivirus</li>
+        <li>OWASP and web security basics</li>
+      </ul>
+      <div class="red100-links"><a class="red100-link" target="_blank" href="https://owasp.org/www-project-top-ten/">OWASP</a><a class="red100-link" target="_blank" href="https://portswigger.net/web-security">Web Academy</a></div>
+    </div>
+  </div>
+
+  <div class="red100-section-title">YEAR 2 — RECON + LAB PRACTICE</div>
+  <div class="v100-style-grid">
+    <div class="v100-style-card">
+      <h4>MONTH 13-16 — OSINT</h4>
+      <ul>
+        <li>Search engines and advanced search</li>
+        <li>Social media and public records</li>
+        <li>WHOIS, breaches and infrastructure mapping</li>
+        <li>Tools: Maltego, Recon-ng, theHarvester, SpiderFoot</li>
+      </ul>
+      <div class="red100-links"><a class="red100-link" target="_blank" href="https://osintframework.com/">OSINT Framework</a><a class="red100-link" target="_blank" href="https://www.youtube.com/results?search_query=osint+for+beginners">YouTube</a></div>
+    </div>
+    <div class="v100-style-card">
+      <h4>MONTH 17-20 — FOOTPRINTING</h4>
+      <ul>
+        <li>Network footprinting and topology mapping</li>
+        <li>Website footprinting and HTTP headers</li>
+        <li>DNS footprinting and record types</li>
+        <li>Tools theory: Nmap, dig, netcat, Shodan</li>
+      </ul>
+      <div class="red100-links"><a class="red100-link" target="_blank" href="https://www.cloudflare.com/learning/dns/dns-records/">DNS Guide</a><a class="red100-link" target="_blank" href="https://www.google.com/search?q=dns+footprinting+notes+pdf">PDF</a></div>
+    </div>
+    <div class="v100-style-card">
+      <h4>MONTH 21-22 — SCANNING THEORY</h4>
+      <ul>
+        <li>Nmap: port scanning, service detection, OS detection</li>
+        <li>Network mapping and scriptable scanning theory</li>
+        <li>Nessus basics: scan reports and plugin awareness</li>
+        <li>Credentialed scanning concepts</li>
+      </ul>
+      <div class="red100-links"><a class="red100-link" target="_blank" href="https://nmap.org/book/man.html">Nmap Manual</a><a class="red100-link" target="_blank" href="https://www.tenable.com/cybersecurity-guide/principles/vulnerability-scanning">Tenable Guide</a></div>
+    </div>
+    <div class="v100-style-card">
+      <h4>MONTH 23-24 — REPORTING + CTF</h4>
+      <ul>
+        <li>Write findings, severity and remediation notes</li>
+        <li>Keep screenshots and lab evidence</li>
+        <li>Practice in THM, HTB, PortSwigger and picoCTF</li>
+        <li>Build your own notes vault from what you finish</li>
+      </ul>
+      <div class="red100-links"><a class="red100-link" target="_blank" href="https://www.google.com/search?q=penetration+testing+report+template+pdf">Report Templates</a><a class="red100-link" target="_blank" href="https://www.youtube.com/results?search_query=penetration+testing+report+writing">Reporting Videos</a></div>
     </div>
   </div>
 </div>
@@ -8234,7 +8479,7 @@ setTimeout(()=>{v30Refresh();v30Notify('CIPHER V100 READY')},500);
   function enrichTabs(){document.querySelectorAll(".tabs .tab").forEach(btn=>{const onclick=btn.getAttribute("onclick")||"";const match=onclick.match(/switchTab\('([^']+)'\)/);const id=match?match[1]:"";const panel=document.getElementById("tab-"+id);if(panel&&!panel.querySelector('[data-v100kit="1"]')&&id!=="v100system")panel.insertAdjacentHTML("beforeend",kitHTML(id));});const master=document.getElementById("v100MasterRoadmap");if(master&&!master.dataset.ready){master.dataset.ready="1";const blocks=[["Months 1-3","Cyber basics, German/English basics, gym consistency, grooming routine."],["Months 4-6","Linux + networking, strength progression, speaking practice, study notes."],["Months 7-9","Web security basics, projects, boxing/conditioning, better communication."],["Months 10-12","Portfolio, exam prep, ethical hacking labs, body transformation review."],["Year 2 First Half","Digital forensics tracks, certifications, bigger projects, interview prep."],["Year 2 Second Half","Specialization, GitHub portfolio, advanced routines, long-term mastery."]];master.innerHTML=blocks.map(b=>`<div class="v100-plan-card"><h4>${b[0]}</h4><p>${b[1]}</p><div class="v100-resource-row">${linksFor("Knowledge")}</div></div>`).join("");}}
   window.v100Render=function(){const pg=document.getElementById("v100PowerGrid");const mg=document.getElementById("v100ModeGrid");if(pg){pg.innerHTML=powers.map(p=>{const xp=Number(localStorage.getItem("cipherV100Power_"+p[1])||0);return `<div class="v100-power"><div class="icon">${p[0]}</div><b>${p[1]}</b><span>${p[2]}</span><span>XP: <strong>${xp}</strong></span><button class="v100-mini-btn" onclick="v100ClaimPower('${p[1]}')">AWAKEN +10</button></div>`;}).join("");}if(mg){const current=localStorage.getItem("cipherV100Theme")||"v100-theme-void";mg.innerHTML=interfaces.map(m=>`<div class="v100-mode ${current===m[0]?'active':''}" data-mode="${m[0]}" onclick="v100ApplyMode('${m[0]}','${m[1]}')"><b>${m[1]}</b><span>${m[2]}</span><div class="v100-color-strip"></div></div>`).join("");}};
   function normalizeVersionLabels(){document.querySelectorAll(".system-badge,.arise-sub,.v7-deck-title,.v10-panel,.v11-taskbar,.v14-superbar,.v15-login-title,.v30-sidebar").forEach(el=>{el.innerHTML=el.innerHTML.replace(/V(?:5|6|7|10|11|14|15|25|30|50)/g,"V100").replace(/VERSION\s*(?:5|6|7|10|11|14|15|25|30|50)/gi,"VERSION 100");});}
-  function init(){normalizeVersionLabels();const saved=localStorage.getItem("cipherV100Theme")||"v100-theme-void";cleanInterfaceClasses();if(saved!=="v100-theme-void")document.body.classList.add(saved);const sel=document.getElementById("v100InterfaceSelect");if(sel)sel.value=saved;v100Render();enrichTabs();const allowed=new Set(["workouts","dashboard","tracker","routine","daily","nutrition","skills","study","skincare","resources","hygiene","growth","english","german","cyberroutine","cyber2y","workout2y","dfir2y","ethical2y","trading","darkpsy","mentalism","grooming2y","vault","aihub","projects","certs","v50xphub","v100system","styleprofile","outfits100","lookmatch","wardrobe","roadmap2y","styleprofile","outfits100","lookmatch","wardrobe","roadmap2y"]);const seen=new Set();document.querySelectorAll(".tabs .tab").forEach(btn=>{const onclick=btn.getAttribute("onclick")||"";const match=onclick.match(/switchTab\('([^']+)'\)/);const id=match?match[1]:"";if(!allowed.has(id)||seen.has(id))btn.remove();else seen.add(id);});const tabs=[...document.querySelectorAll(".tabs .tab")];if(tabs.length>30){const road=tabs.find(b=>(b.getAttribute("onclick")||"").includes("roadmap2y"));if(road)road.remove();}}
+  function init(){normalizeVersionLabels();const saved=localStorage.getItem("cipherV100Theme")||"v100-theme-void";cleanInterfaceClasses();if(saved!=="v100-theme-void")document.body.classList.add(saved);const sel=document.getElementById("v100InterfaceSelect");if(sel)sel.value=saved;v100Render();enrichTabs();const allowed=new Set(["workouts","dashboard","tracker","routine","daily","nutrition","skills","study","skincare","resources","hygiene","growth","english","german","cyberroutine","cyber2y","workout2y","dfir2y","ethical2y","trading","darkpsy","mentalism","grooming2y","vault","aihub","projects","certs","v50xphub","v100system","redteamroadmap","styleprofile","outfits100","lookmatch","wardrobe","roadmap2y","redteamroadmap","styleprofile","outfits100","lookmatch","wardrobe","roadmap2y"]);const seen=new Set();document.querySelectorAll(".tabs .tab").forEach(btn=>{const onclick=btn.getAttribute("onclick")||"";const match=onclick.match(/switchTab\('([^']+)'\)/);const id=match?match[1]:"";if(!allowed.has(id)||seen.has(id))btn.remove();else seen.add(id);});const tabs=[...document.querySelectorAll(".tabs .tab")];if(tabs.length>30){const road=tabs.find(b=>(b.getAttribute("onclick")||"").includes("roadmap2y"));if(road)road.remove();}}
   document.addEventListener("DOMContentLoaded",init);setTimeout(init,500);setTimeout(init,1200);
 })();
 </script>
@@ -8382,7 +8627,7 @@ setTimeout(()=>{v30Refresh();v30Notify('CIPHER V100 READY')},500);
     });
 
     // 30 tabs max, remove duplicates/similar tabs at runtime.
-    const allowed=["workouts","dashboard","tracker","routine","daily","nutrition","skills","study","skincare","resources","hygiene","growth","english","german","cyberroutine","cyber2y","workout2y","dfir2y","ethical2y","trading","darkpsy","mentalism","grooming2y","vault","aihub","projects","certs","v50xphub","v100system","styleprofile","outfits100","lookmatch","wardrobe","roadmap2y","styleprofile","outfits100","lookmatch","wardrobe"];
+    const allowed=["workouts","dashboard","tracker","routine","daily","nutrition","skills","study","skincare","resources","hygiene","growth","english","german","cyberroutine","cyber2y","workout2y","dfir2y","ethical2y","trading","darkpsy","mentalism","grooming2y","vault","aihub","projects","certs","v50xphub","v100system","redteamroadmap","styleprofile","outfits100","lookmatch","wardrobe","roadmap2y","redteamroadmap","styleprofile","outfits100","lookmatch","wardrobe"];
     const seen=new Set();
     document.querySelectorAll(".tabs .tab").forEach(btn=>{
       const onclick=btn.getAttribute("onclick")||"";
@@ -8731,6 +8976,245 @@ setTimeout(()=>{v30Refresh();v30Notify('CIPHER V100 READY')},500);
   setTimeout(installStyleTabs,500);
   setTimeout(installStyleTabs,1500);
   setTimeout(installStyleTabs,2800);
+})();
+</script>
+
+
+
+<script>
+/* ===== CIPHER V100 RED TEAM ROADMAP ENGINE ===== */
+(function(){
+  const data = {
+    networking: ['Networking Fundamentals','Study TCP/IP model, subnetting, routing, network devices and how data moves across the network.','https://www.youtube.com/results?search_query=networking+fundamentals+for+cybersecurity','https://www.google.com/search?q=networking+fundamentals+cybersecurity+pdf'],
+    os: ['Operating Systems','Learn Linux CLI, Windows internals basics, macOS basics, users, services, processes and file systems.','https://www.youtube.com/results?search_query=linux+windows+basics+for+cybersecurity','https://www.google.com/search?q=linux+windows+cybersecurity+basics+pdf'],
+    programming: ['Programming','Build Python, Bash and basic C/C++ understanding for automation and theory-level exploitation concepts.','https://www.youtube.com/results?search_query=python+bash+for+cybersecurity+beginners','https://www.google.com/search?q=python+bash+cybersecurity+notes+pdf'],
+    basics: ['Cybersecurity Basics','Cover threats, common vulnerability types and security controls before moving deeper into labs.','https://www.youtube.com/results?search_query=cybersecurity+basics+for+beginners','https://www.google.com/search?q=cybersecurity+basics+notes+pdf'],
+    osint: ['OSINT','Learn ethical information gathering: search engines, WHOIS, public records and OSINT tools.','https://www.youtube.com/results?search_query=OSINT+for+beginners','https://www.google.com/search?q=OSINT+beginner+pdf'],
+    footprinting: ['Footprinting','Understand network, website and DNS footprinting concepts and infrastructure mapping.','https://www.youtube.com/results?search_query=footprinting+cybersecurity+beginner','https://www.google.com/search?q=footprinting+cybersecurity+notes+pdf'],
+    scanning: ['Scanning Theory','Learn Nmap and Nessus theory in authorized environments only, plus reporting basics.','https://www.youtube.com/results?search_query=nmap+nessus+beginner+authorized+lab','https://www.google.com/search?q=nmap+nessus+beginner+guide+pdf'],
+    reporting: ['Reporting + Notes','Write clear notes, findings, severity, screenshots and remediation suggestions.','https://www.youtube.com/results?search_query=penetration+testing+report+writing','https://www.google.com/search?q=pentest+report+template+pdf']
+  };
+
+  window.red100RenderTopic = function(key){
+    const t = data[key] || data.networking;
+    const box = document.getElementById('red100TopicBox');
+    if(!box) return;
+    box.innerHTML = `<strong>${t[0]}</strong><br>${t[1]}<div class="red100-links" style="margin-top:12px"><a class="red100-link" target="_blank" href="${t[2]}">YouTube</a><a class="red100-link" target="_blank" href="${t[3]}">PDF / Notes</a><a class="red100-link" target="_blank" href="https://drive.google.com/drive/mobile/folders/1c4nFRess-oL0jNITaUuADEVfTHcTnysO?usp=sharing&fbclid=PAZXh0bgNhZW0BMAABpgZ4SGOta2uEaWSd2Vz10MzzBoaYyH9IRLKg4y_iYDvlaYFV7dzB8dEQvQ_aem_HdA6Uq-1snyl55ktyUD3QA&pli=1">Your Book Drive</a></div>`;
+  };
+
+  function installRedTeamTab(){
+    const tabs = document.querySelector('.tabs');
+    if(tabs && !document.querySelector('.tabs .tab[onclick*="redteamroadmap"]')){
+      const btn = document.createElement('button');
+      btn.className = 'tab';
+      btn.dataset.cat = 'Cybersecurity';
+      btn.setAttribute('onclick', "switchTab('redteamroadmap')");
+      btn.textContent = '◈ RED TEAM ROADMAP';
+      tabs.appendChild(btn);
+    }
+    red100RenderTopic('networking');
+  }
+
+  document.addEventListener('DOMContentLoaded', installRedTeamTab);
+  setTimeout(installRedTeamTab, 400);
+  setTimeout(installRedTeamTab, 1200);
+})();
+</script>
+
+
+
+<script>
+/* ===== CIPHER V100 MASTER TAB SELECTOR ENGINE ===== */
+(function(){
+  const preferredNames = {
+    workouts:"Workouts",dashboard:"Dashboard",tracker:"Tracker",routine:"Routine",daily:"Daily Log",
+    nutrition:"Nutrition",skills:"Combat Skills",study:"Study Planner",skincare:"Skincare",resources:"Resources",
+    hygiene:"Hygiene",growth:"Growth",english:"English",german:"German",cyberroutine:"Cyber Routine",
+    cyber2y:"Cyber 2Y",workout2y:"Workout 2Y",dfir2y:"DFIR 2Y",ethical2y:"Ethical Hacking",
+    trading:"Trading",darkpsy:"Psychology",mentalism:"Mentalism",grooming2y:"Grooming 2Y",vault:"Vault",
+    aihub:"AI Hub",projects:"Projects",certs:"Certifications",v50xphub:"XP Command",v100system:"V100 System",
+    roadmap2y:"2Y Roadmap",styleprofile:"Style Profile",outfits100:"100+ Outfits",lookmatch:"Look Match",
+    wardrobe:"Wardrobe",redteamroadmap:"Red Team Roadmap"
+  };
+  const categories = {
+    workouts:"Fitness",tracker:"Fitness",workout2y:"Fitness",nutrition:"Nutrition",skills:"Combat",
+    study:"Cybersecurity",cyberroutine:"Cybersecurity",cyber2y:"Cybersecurity",ethical2y:"Cybersecurity",
+    redteamroadmap:"Cybersecurity",dfir2y:"Forensics",german:"Language",english:"Language",
+    styleprofile:"Style",outfits100:"Style",lookmatch:"Style",wardrobe:"Style",skincare:"Grooming",
+    hygiene:"Grooming",grooming2y:"Grooming",trading:"Career",projects:"Career",certs:"Career",
+    aihub:"AI",resources:"Knowledge",vault:"Knowledge",roadmap2y:"Knowledge",dashboard:"Core",
+    routine:"Core",daily:"Core",growth:"Mind",darkpsy:"Mind",mentalism:"Mind",v50xphub:"Core",v100system:"Core"
+  };
+
+  function cleanLabel(raw,id){
+    let s = raw || preferredNames[id] || id;
+    return s.replace(/^[◇◈◆▶\s]+/,'').replace(/\s+/g,' ').trim();
+  }
+
+  function panelId(id){ return "tab-" + id; }
+
+  window.v100OpenAnyTab = function(id){
+    const panel = document.getElementById(panelId(id));
+    if(!panel){
+      if(typeof showToast === "function") showToast("Tab not found: " + id);
+      return;
+    }
+
+    document.querySelectorAll(".panel").forEach(p => p.classList.remove("active"));
+    panel.classList.add("active");
+
+    document.querySelectorAll(".tabs .tab").forEach(btn => {
+      const m = (btn.getAttribute("onclick") || "").match(/switchTab\('([^']+)'\)/);
+      btn.classList.toggle("active", !!m && m[1] === id);
+    });
+
+    const sel = document.getElementById("v100TabSelect");
+    if(sel) sel.value = id;
+
+    document.querySelectorAll(".v100-tab-chip").forEach(ch => ch.classList.toggle("active", ch.dataset.tab === id));
+
+    if(typeof showToast === "function") showToast("Opened: " + (preferredNames[id] || id));
+    panel.scrollIntoView({behavior:"smooth", block:"start"});
+  };
+
+  function collectTabs(){
+    const map = new Map();
+
+    document.querySelectorAll(".tabs .tab").forEach(btn=>{
+      const m = (btn.getAttribute("onclick") || "").match(/switchTab\('([^']+)'\)/);
+      if(m){
+        const id = m[1];
+        map.set(id, {id, label:cleanLabel(btn.textContent,id), cat:btn.dataset.cat || categories[id] || "Other"});
+      }
+    });
+
+    document.querySelectorAll("[id^='tab-'].panel").forEach(panel=>{
+      const id = panel.id.replace(/^tab-/,"");
+      if(!map.has(id)){
+        const title = panel.querySelector(".section-title,.v100-style-title,.red100-title,.cipher-dash-rank,.unique-title,.v100-title,.v50-xp-title");
+        map.set(id, {id, label:cleanLabel(title ? title.textContent : "", id), cat:categories[id] || "Other"});
+      }
+    });
+
+    const preferredOrder = [
+      "dashboard","v50xphub","v100system","roadmap2y","redteamroadmap",
+      "study","cyberroutine","cyber2y","ethical2y","dfir2y",
+      "workouts","tracker","workout2y","nutrition","skills",
+      "styleprofile","outfits100","lookmatch","wardrobe","skincare","grooming2y",
+      "routine","daily","resources","vault","aihub","projects","certs","trading",
+      "english","german","growth","darkpsy","mentalism","hygiene"
+    ];
+
+    return [...map.values()].sort((a,b)=>{
+      const ai = preferredOrder.indexOf(a.id);
+      const bi = preferredOrder.indexOf(b.id);
+      return (ai === -1 ? 999 : ai) - (bi === -1 ? 999 : bi) || a.label.localeCompare(b.label);
+    });
+  }
+
+  function ensureButtonForImportantTabs(tabs){
+    const tabBar = document.querySelector(".tabs");
+    if(!tabBar) return;
+    ["redteamroadmap","styleprofile","outfits100","lookmatch","wardrobe"].forEach(id=>{
+      if(document.getElementById(panelId(id)) && !document.querySelector(`.tabs .tab[onclick*="'${id}'"]`)){
+        const btn = document.createElement("button");
+        btn.className = "tab";
+        btn.dataset.cat = categories[id] || "Other";
+        btn.setAttribute("onclick", `switchTab('${id}')`);
+        btn.textContent = "◈ " + (preferredNames[id] || id).toUpperCase();
+        tabBar.appendChild(btn);
+      }
+    });
+  }
+
+  function buildSelector(){
+    const tabBar = document.querySelector(".tabs");
+    if(!tabBar) return;
+
+    ensureButtonForImportantTabs();
+
+    let shell = document.getElementById("v100TabSelectorShell");
+    if(!shell){
+      shell = document.createElement("div");
+      shell.id = "v100TabSelectorShell";
+      shell.className = "v100-tab-selector-shell";
+      shell.innerHTML = `
+        <div class="v100-tab-selector-head">
+          <div class="v100-tab-selector-title">CIPHER TAB SELECTOR</div>
+          <div class="v100-tab-selector-count" id="v100TabCount">Checking tabs...</div>
+        </div>
+        <div class="v100-tab-selector-controls">
+          <select id="v100TabSelect" onchange="v100OpenAnyTab(this.value)"></select>
+          <select id="v100TabCategory" onchange="v100FilterTabs()"></select>
+          <input id="v100TabSearch" placeholder="Search tab..." oninput="v100FilterTabs()">
+          <button onclick="v100ShowAllTabs()">SHOW ALL</button>
+        </div>
+        <div class="v100-tab-chip-row" id="v100TabChipRow"></div>
+      `;
+      tabBar.parentNode.insertBefore(shell, tabBar);
+    }
+
+    const tabs = collectTabs();
+    const select = document.getElementById("v100TabSelect");
+    const catSelect = document.getElementById("v100TabCategory");
+    const chips = document.getElementById("v100TabChipRow");
+    const count = document.getElementById("v100TabCount");
+
+    if(select){
+      const current = select.value;
+      select.innerHTML = tabs.map(t => `<option value="${t.id}" data-cat="${t.cat}">${t.cat} — ${t.label}</option>`).join("");
+      if(current && tabs.some(t=>t.id===current)) select.value = current;
+    }
+
+    if(catSelect && !catSelect.dataset.ready){
+      const cats = ["All", ...Array.from(new Set(tabs.map(t=>t.cat))).sort()];
+      catSelect.innerHTML = cats.map(c=>`<option value="${c}">${c}</option>`).join("");
+      catSelect.dataset.ready = "1";
+    }
+
+    if(chips){
+      chips.innerHTML = tabs.map(t => `<button class="v100-tab-chip" data-tab="${t.id}" data-cat="${t.cat}" onclick="v100OpenAnyTab('${t.id}')">${t.label}</button>`).join("");
+    }
+
+    if(count){
+      const visibleButtons = document.querySelectorAll(".tabs .tab").length;
+      const panels = document.querySelectorAll("[id^='tab-'].panel").length;
+      count.textContent = `${tabs.length} selectable tabs • ${visibleButtons} top buttons • ${panels} panels found`;
+    }
+
+    v100FilterTabs();
+  }
+
+  window.v100FilterTabs = function(){
+    const cat = (document.getElementById("v100TabCategory") || {}).value || "All";
+    const q = ((document.getElementById("v100TabSearch") || {}).value || "").toLowerCase();
+
+    document.querySelectorAll("#v100TabSelect option").forEach(opt=>{
+      const okCat = cat === "All" || opt.dataset.cat === cat;
+      const okSearch = opt.textContent.toLowerCase().includes(q);
+      opt.hidden = !(okCat && okSearch);
+    });
+
+    document.querySelectorAll(".v100-tab-chip").forEach(ch=>{
+      const okCat = cat === "All" || ch.dataset.cat === cat;
+      const okSearch = ch.textContent.toLowerCase().includes(q);
+      ch.classList.toggle("v100-tab-search-hidden", !(okCat && okSearch));
+    });
+  };
+
+  window.v100ShowAllTabs = function(){
+    const cat = document.getElementById("v100TabCategory");
+    const search = document.getElementById("v100TabSearch");
+    if(cat) cat.value = "All";
+    if(search) search.value = "";
+    v100FilterTabs();
+  };
+
+  document.addEventListener("DOMContentLoaded", buildSelector);
+  setTimeout(buildSelector, 400);
+  setTimeout(buildSelector, 1200);
+  setTimeout(buildSelector, 2400);
+  setTimeout(buildSelector, 4200);
 })();
 </script>
 
